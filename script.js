@@ -11,5 +11,11 @@ function drawBall(x, y, radius) {
   ctx.closePath();
 }
 
-drawBall(130, 230, 30);
-drawBall(230, 130, 10);
+// drawBall(130, 230, 30);
+// drawBall(230, 230, 30);
+
+window.addEventListener("mousemove", (e) => {
+  ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+  drawBall(e.x - 160, e.y - 10, Math.random() + 10);
+  console.log(e.x, e.y);
+});
